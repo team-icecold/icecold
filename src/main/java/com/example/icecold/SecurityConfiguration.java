@@ -25,15 +25,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder authentication) throws Exception {
-        // authentication
-         //       .userDetailsService(usersLoader)
-          //      .passwordEncoder(passwordEncoder());
+         authentication
+                .userDetailsService(usersLoader)
+                .passwordEncoder(passwordEncoder());
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-      //  http
+       //http
                 /* Login configuration */
-           //     .formLogin().loginPage("/login").defaultSuccessUrl("/index")
+           //     .formLogin().loginPage("/login").defaultSuccessUrl("")
             //    .permitAll() ;
     }
 }

@@ -1,0 +1,21 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Ice Cold</title>
+    <head th:include="partials:: head"></head>
+</head>
+<body>
+    <form class="form-color" th:action="@{/login}" method="POST">
+        <h1>Login</h1>
+        <div>
+            <label for="username" >Username</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div>
+            <label for="password" >Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</body>
+</html>

@@ -36,14 +36,21 @@ public class User {
     private List<Role> roles;
 
 
-    // Basic Empty and Minimum-Field Constructors
-    public User() {}
+    // Basic No Arg and Minimum-Field Constructors
+    public User() {
 
-    public User(long id, String username, String password, String email) {
+    }
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(long id, String username,  String email, String password) {
         this.id = id;
         this.username = username;
-        this.password = password;
         this.email = email;
+        this.password = password;
     }
 
     public User(long id, String username, String password, String email, boolean enabled) {
@@ -61,7 +68,6 @@ public class User {
         email = copy.email;
         enabled = copy.enabled;
     }
-
 
     // Basic Field Getters and Setters
     public long getId() {return id;}

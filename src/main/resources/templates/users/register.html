@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Ice Cold</title>
+  <head th:include="partials:: head"></head>
+</head>
+<body>
+
+  <h1>Create an account</h1>
+  <form th:action="@{/register}" method="POST">
+
+      <label for="username">Username</label>
+      <input type="text" id="username" />
+
+      <label for="email">Email</label>
+      <input  type="text" id="email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" />
+
+      <label for="password-confirm">Confirm Password</label>
+      <input type="password" id="password-confirm" />
+
+    <button class="btn btn-primary" type="submit">Register</button>
+  </form>
+
+</body>
+</html>

@@ -2,10 +2,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Ice Cold</title>
-    <head th:include="partials:: head"></head>
+
+    <th:block th:include="partials/partials.html :: head"></th:block>
 </head>
 <body>
 <h1>Start Landing</h1>
 
+<nav th:replace="partials/navbar :: navbar"></nav>
+
+
+<section class="colored-section" id="title" style=" background-size: 100%;">
+
+    <div class="container-fluid top">
+
+        <!-- Title -->
+
+        <div class="row align-items-center" >
+            <div class="title-intro mx-5  col-lg-6 text-center align-items-center ">
+                <h1 class="mt-5">something  <strong></strong>
+                    <br>         about  <strong>IceCold</strong>.</h1>
+
+                <button type="button" class="btn btn-light btn-lg  " onclick="location.href='#store';" >   Go Cold  </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+
+<section class="colored-section container-fluid" id="gallery">
+    <div class="colored-section" >
+        <div id="carousel  " class="carousel slide" data-ride="carousel" data-interval="3000" dat-pause="hover">
+            <div class="carousel-inner "  style=" width:100%; max-height: 600px !important;">
+                <div class="carousel-item active ">
+                    <img class="image img-fluid" src="" alt="pic">
+                </div>
+                <div class="carousel-item ">
+                    <img class="image img-fluid" src="" alt="pic">
+                </div>
+                <div class="carousel-item  ">
+                    <img class="image img-fluid " src="" alt="pic">
+                </div>
+                <div class="carousel-item  ">
+                    <img class="image img-fluid " src="" alt="pic">
+                </div>
+                <div class="carousel-item  ">
+                    <img class="image img-fluid" src="" alt="pic">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<th:block th:include="partials/footer.html :: scripts"></th:block>
 </body>
 </html>

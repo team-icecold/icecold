@@ -2,9 +2,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Ice Cold</title>
-    <head th:include="partials:: head"></head>
+
+    <th:block th:include="partials/partials :: head"></th:block>
 </head>
 <body>
 
+<!-- Store  sample cards-->
+
+<section class="white-section" id="store">
+
+    <h2>Merchandise</h2>
+    <p></p>
+
+    <div class="container">
+        <div class="row">
+            <div class="shop-column col-lg-4 col-md-6 col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Product</h3>
+                    </div>
+                    <div class="card-body">
+                        <img class="image" src="" alt="pic">
+                        <br />
+                        <br />
+                        <br>
+                        <p>Description</p>
+
+                        <br />
+                        <button class="w-100 btn btn-lg shop-button" type="button">Shop</button>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-column col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Product</h3>
+                    </div>
+                    <div class="card-body">
+                        <img class="image" src="" alt="pic">
+                        <br />
+                        <br />
+                        <br>
+                        <p>Description</p>
+
+                        <br>
+                        <button class="w-100 btn btn-lg shop-button" type="button">Shop</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="shop-column col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Product</h3>
+                    </div>
+                    <div class="card-body">
+                        <img class="cup-big" src="" alt="pic">
+                        <br>
+                        <br>
+                        <p>Description</p>
+
+                        <br />
+                        <button class="w-100 btn btn-lg shop-button" type="button">Shop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<th:block th:include="partials/footer.html :: scripts"></th:block>
 </body>
 </html>

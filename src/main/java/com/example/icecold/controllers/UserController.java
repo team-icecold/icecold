@@ -2,22 +2,30 @@ package com.example.icecold.controllers;
 
 import com.example.icecold.models.User;
 import com.example.icecold.repositories.UserRepository;
+import com.example.icecold.services.StorageService;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.nio.file.Paths;
 
 @Controller
 public class UserController {
 
     private UserRepository usersDao;
     private PasswordEncoder passwordEncoder;
+    private final StorageService storageService;
 
-    public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder){
+    public UserController(UserRepository usersDao, PasswordEncoder passwordEncoder, StorageService storageService){
         this.usersDao = usersDao;
         this.passwordEncoder = passwordEncoder;
+        this.storageService = storageService;
     }
 
     @GetMapping("/register")
@@ -52,5 +60,14 @@ public class UserController {
     @GetMapping("/dashboard")
     public String showDashboard() {
         return "users/dashboard";
+    }
+
+    @PostMapping("dashboard/imageupload")
+    public String uploadImage(
+                    @RequestParam(name="file")MultipartFile uploadedImage,
+                    Model model){
+        storageService.store(uploadedImage);
+        model.addAttribute("success", true);
+        return "redirect:/dashboard";
     }
 }

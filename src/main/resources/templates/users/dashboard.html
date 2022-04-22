@@ -9,7 +9,7 @@
 
 <h4>Upload Media</h4>
 <div>
-    <form action="/fileupload" method="POST" enctype="multipart/form-data">
+    <form th:action="/dashboard/imageupload" method="POST" enctype="multipart/form-data">
         <label for="file">Upload Image</label>
         <input id="file" name="file" type="file"/>
         <button type="submit">Upload</button>

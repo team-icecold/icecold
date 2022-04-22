@@ -31,9 +31,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-       //http
+       http
                 /* Login configuration */
-           //     .formLogin().loginPage("/login").defaultSuccessUrl("")
-            //    .permitAll() ;
+                .formLogin().loginPage("/login").defaultSuccessUrl("/dashboard")
+                .permitAll()
+                .and().logout().logoutSuccessUrl("/login?logout")
+                .and().authorizeRequests().antMatchers(
+                        "/","/about"
+               )
+               .permitAll();
     }
 }
